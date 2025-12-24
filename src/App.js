@@ -1,4 +1,106 @@
-function App(props)
+import { useState } from 'react'
+import React from 'react'
+const App = () => {
+  const[name,setName]=useState("----")
+
+  const dis=(event)=>{  //dis= user defined functions//
+setName(event.target.value)   //argument not passed//           
+  }
+  const show=(v)=>{
+    console.log(v)      //argument passed//
+  }
+  const find=(v1,v2)=>{
+    console.log(v1+v2)      // two argument passed//
+  }
+
+
+  return (
+    <div>
+      <form>
+      <input type ="text" value={name} onChange={dis} placeholder='Enter user name'></input><br></br>
+        <input type ="password"  onChange={()=>show("12345")} placeholder='Enter password'></input><br></br>
+          <input type ="number"  onChange={()=>find(12,34)} placeholder='accno'></input><br></br>
+            <input type ="email" placeholder='Enter mail id'></input><br></br>
+
+            <label>Select Gender</label>
+            <input type="radio" name="gender"></input>Male
+            <input type="radio" name="gender"></input>Female
+            <input type="radio" name="gender"></input>Others
+            <br></br>
+
+            <label>Select course</label>
+            <input type="checkbox" name="C"></input>C
+            <input type="checkbox" name="C1"></input>C++
+            <input type="checkbox" name="C2"></input>Java
+            <input type="checkbox" name="C3"></input>Pthyon
+            <input type="checkbox" name="C4"></input>none of th above
+            <br></br>
+            
+            <select>
+              <option>Select Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <br></br>
+
+            select color:<input type='color' name='col'></input>
+            <br></br>
+            Select DOB:<input type='date' name='dob'></input>
+            <br></br>
+            Select time:<input type='time' name="time"></input>
+            <br></br>
+            select week:<input type="week" name="week"></input>
+            <br></br>
+            select file:<input type='file' name="resume"></input>
+            <br></br>
+
+
+                    
+          
+          <label>Type address</label>
+          <textarea rows="7" cols="24"></textarea>
+          <br></br>
+
+          <label>list box</label>
+          <select size="4" multiple>
+            <option>sunday</option>
+            <option>monday</option>
+            <option>tuesday</option>
+            <option>wednesday</option>
+            <option>thursday</option>
+            <option>friday</option>
+            <option>saturday</option>
+          </select>
+          <br></br>
+
+      🟥🟨🟩🟫
+          <label>volume:</label>
+            <input type= "range"  min="0" max="6" ></input>
+            <br></br>
+<progress style={{background:"blue",border:"2px solid yellow"}} min="0" max="100" values="90"></progress>   
+
+
+          <button><b><i>clickme</i></b></button><br></br>
+          <input type ="submit"></input><br></br>
+          <input type='button' value="clickme"></input><br></br>
+          
+          </form>
+    </div>
+  )
+}
+
+export default App
+/*function App(props)
 {
   var a=props.data.rno
   var b=props.data.sname
