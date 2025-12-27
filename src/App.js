@@ -1,4 +1,113 @@
-import { useState } from 'react'
+import "./App.css"
+function App()
+{
+  return(
+    <div id="outer" align="center">
+      <div id="inner">
+      <font id="savi" size="7">🔑</font>
+      <h2>ADMIN PANNEL</h2>
+      <input type="text" placeholder="Enter user name here"></input>
+      <input type="password" placeholder="Enter password"></input>
+      <p align="right"><button>Login</button></p>
+    </div>
+    </div>
+  )
+}
+export default App
+/*import React from 'react'
+function App()
+{
+  return(
+    <div className="App">
+      <div className="Login">
+        <h1 className="login page">ADMIN PANEL</h1>
+        <form>
+          <input type="text" placeholder="UserName" className="login-input"></input><br></br>
+          <input type="password" placeholder="password" className="login -input"></input><br></br>
+          <button type="submit" className="login input-input"></button>
+        </form>
+  </div>
+  </div>
+  )
+}
+export default App
+/*import React, { useState } from 'react'
+import { useEffect } from 'react'
+const App = () => {
+  const[name,setName]=useState("sudha")
+  useEffect(()=>{
+    document.title=`Hello! ${name}`
+  })
+  const dis=()=>{
+    setTimeout(()=>{
+    setName("1.love 2.life")
+  },3000)
+
+  }
+  return (
+    <div>
+      <h1>UseEffect Hook</h1>
+      <button onClick={dis}>change Name</button>
+      <br></br>
+      {name}
+    </div>
+  )
+}
+
+export default App
+import React from "react"
+import { useState } from "react"
+const App = () =>{
+
+  const[val,setVal]=useState(0)
+    const dis=(event)=>{
+      setVal(parseInt(event.target.value)+1)
+    }
+  
+return(
+  <div>
+  <button onClick={dis} value={val}> you clicked : {val} times</button>
+  
+    
+  </div>
+)
+}
+export default App*/
+
+/*import { useState } from "react"
+function App()
+{
+  const[count,setCount]=useState(100)
+  const show=(event)=>{
+    if(event.target.id==="b1")
+      setCount(count+1)
+    if(event.target.id==="b2")
+      setCount(count-1)
+    if(event.target.id==="b3")
+      setCount(count-5)
+  }
+  // const show1=()=>{
+  //   setCount(count+1)
+  // }
+  // const show2=()=>{
+  //   setCount(count-1)}
+  
+  return
+    <>
+    <button id="b1" onClick={show}>Increment by 1</button>
+    <button id="b2" onClick={show}>Decrement by 1</button>
+    <button id="b3" onClick={show}>Decrement by 5</button>
+      // <buttom onClick={show1}>Increment By 1</buttom >
+    <button onClick={show2}>Decrement By 1</button>  
+    
+    <br></br>
+    <h2>{count}</h2>
+    </>
+  
+
+}
+export default App
+/*import { useState } from 'react'
 import React from 'react'
 const App = () => {
   const[name,setName]=useState("----")

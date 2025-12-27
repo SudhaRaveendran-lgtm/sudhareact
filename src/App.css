@@ -1,3 +1,5 @@
+
+/*
 .App {
   text-align: center;
 }
@@ -35,4 +37,60 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+#outer
+{
+  box-shadow: 5px 10px 15px 10px black;
+  border-radius:50px ;
+  width:50%;
+  background-color: rgb(24,212,190);
+  transform:translate(50%,50%);
+}
+input,button{
+  margin-bottom: 40px;
+  display: block;
+}
+input{
+  width:75%;
+  border:none;
+  outline:none;
+  background-color: transparent;
+  border-bottom: 4px solid black;
+  text-align: center;
+  font-size: 30px;
+}
+h2{
+  background-color: black;
+  color:rgb(24,212,190);
+  font-size: 35px;
+}
+button{
+  padding:15px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  border-radius: 19px;
+}
+button:hover
+{
+  font-weight: bold;
+  border: 3px dashed rgb(24,212,190);
+  outline: 4px solid darkgoldenrod;
+  color: rgb(24,212,190);
+  cursor: pointer;
+background-color: black;
+}
+
+font
+{
+position:relative;
+animation-name:savianimation;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-duration: reverse;
+}
+@keyframes savianimation
+{
+  from{left:-150px;transform: ;}
+  to{left:100;transform: ;}
 }
