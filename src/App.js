@@ -1,3 +1,54 @@
+import { useState } from "react"
+function App()
+{
+  const [city,setCity]=useState("karur")
+  const[list,setList]=useState("null")
+  const upcity=(event)=>{
+    setCity(event.target.value);
+  }
+  const findweather=()=>{
+    console.log("city name:",city);
+    var api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7159965ca9d39175841e0594b320c9f8`;
+    fetch(api)
+    .then((response)=>response.json())
+    .then((data)=>{
+      console.log(data);
+      setList(data)
+    })
+    .catch((err)=>{
+      console.log(""+err);
+      setList(err)
+    })
+  }
+  return(
+    <>
+    <h2><center>Fetch-API</center></h2>
+    <h2>Weather Report</h2>
+    <label>Enter city name</label>
+    <input type="text" value={city} onChange={upcity}></input>
+    <br></br>
+    <input type="button" onClick={findweather} value="GetReport"></input>
+    <br></br>
+    {
+      list.cod===200 &&
+      <>
+      <h2>FINAL REPORT</h2>
+      <h3>MAIN REPORT:{list!==null && list.weather[0].main}</h3>
+       <h3>DESCRIPTION:{list!==null && list.weather[0].description}</h3>
+        <h3>WIND SPEED:{list!==null && list.wind.speed}</h3>
+         <h3>TEMPERATURE:{list!==null && list.main.temp}</h3>
+          <h3>HUMIDITY:{list!==null && list.main.humidity}</h3>
+    </>
+}
+{
+  list.cod==="404" &&
+  <h3>Error Message:{list!==null && list.message}</h3>
+}
+</>
+  )
+}
+export default App
+/*
 import "./App.css"
 function App()
 {
